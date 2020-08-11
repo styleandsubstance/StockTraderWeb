@@ -1,0 +1,17 @@
+/**
+ * Created by sdoshi on 5/4/2016.
+ */
+import { Component } from '@angular/core';
+import { HTTP_PROVIDERS }    from '@angular/http';
+
+
+
+import { RecommendationExplorer } from './recommendation-explorer';
+
+@Component({
+    selector: 'my-app',
+    directives: [RecommendationExplorer],
+    templateUrl: '/app/templates/my-app.html'
+
+})
+export class AppComponent { }

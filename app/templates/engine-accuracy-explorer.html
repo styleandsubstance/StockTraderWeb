@@ -1,0 +1,30 @@
+<div>
+    <span>StartDate:</span><p-calendar [(ngModel)]="searchStartDate" dateFormat="yy-mm-dd"></p-calendar>
+
+    <span>End Date:</span><p-calendar [(ngModel)]="searchEndDate" dateFormat="yy-mm-dd"></p-calendar>
+
+
+
+
+    <button #searchButton (click)="getRecommendationEngineAnalyses();">
+        Search
+    </button>
+
+
+    <ag-grid-ng2 #agGrid style="width: 100%; height: 350px;" class="ag-blue"
+                 [gridOptions]="gridOptions"
+                 [columnDefs]="columnDefs"
+                 [showToolPanel]="showToolPanel"
+                 [rowData]="recommendationAnalysisEngines"
+
+                 enableColResize
+                 enableSorting
+                 enableFilter
+
+                 rowHeight="22"
+                 rowSelection="multiple">
+    </ag-grid-ng2>
+
+
+
+</div>

@@ -1,0 +1,34 @@
+<div>
+    <!--input type="date" #searchDate/-->
+
+    <p-calendar [(ngModel)]="searchDate" dateFormat="yy-mm-dd"></p-calendar>
+
+    <button #searchButton (click)="getRecommendationAnalyses();">
+        Search
+    </button>
+
+    <ag-grid-ng2 #agGrid style="width: 100%; height: 350px;" class="ag-blue"
+        [gridOptions]="gridOptions"
+        [columnDefs]="columnDefs"
+        [showToolPanel]="showToolPanel"
+        [rowData]="recommendationAnalyses"
+
+        enableColResize
+        enableSorting
+        enableFilter
+        (modelUpdated)="updateSummaryData()"
+        (rowSelected)="rowSelected(event)"
+
+        rowHeight="22"
+        rowSelection="multiple">
+    </ag-grid-ng2>
+
+    <div (ngModel)="accuracySum">
+        Accuracy: {{accuracySum}}
+    </div>
+    <div (ngModel)="filteredRowCount">
+        Num Rows: {{filteredRowCount}}
+    </div>
+
+
+</div>
